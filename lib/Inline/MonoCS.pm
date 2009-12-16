@@ -6,7 +6,7 @@ use warnings 'all';
 use Digest::MD5 'md5_hex';
 use Carp 'confess';
 
-our $VERSION = '0.000_01';
+our $VERSION = '0.000_02';
 
 sub import {
   my $class = shift;
@@ -29,9 +29,9 @@ sub _compile_code {
   my $sig = md5_hex($s->{code});
   my $cs = "/tmp/$s->{method}_$sig.cs";
   $s->{exe} = "/tmp/$s->{method}_$sig.exe";
-  my $mcs =  `which mcs`;
-  chomp($mcs);
-  my $cmd_line = "$mcs -out:$s->{exe} $s->{compiler_args} $cs";
+  my $compiler =  `which smcs`;
+  chomp($compiler);
+  my $cmd_line = "$compiler -out:$s->{exe} $s->{compiler_args} $cs";
   
   unless( -f $s->{exe} )
   {
