@@ -6,7 +6,7 @@ use warnings 'all';
 use Digest::MD5 'md5_hex';
 use Carp 'confess';
 
-our $VERSION = '0.000_04';
+our $VERSION = '0.000_05';
 
 sub import {
   my $class = shift;
@@ -31,6 +31,7 @@ sub _compile_code {
   $s->{exe} = "/tmp/$s->{method}_$sig.exe";
   my $compiler =  `which gmcs`;
   chomp($compiler);
+  $compiler ||= 'gmcs';
   my $cmd_line = "$compiler -out:$s->{exe} $s->{compiler_args} $cs";
   
   unless( -f $s->{exe} )

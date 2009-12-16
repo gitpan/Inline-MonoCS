@@ -1,5 +1,9 @@
 
 
+2009-12-16  v0.000_05
+  * Sometimes `which gmcs` can't find gmcs (because someone messed with %ENV)
+    so now if we can't find gmcs we default to 'gmcs' and hope that works.
+
 2009-12-16  v0.000_04
   * Fixed typo in `which` command.
 
