@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Inline-MonoCS
-version:            0.000_01
+version:            1.000
 abstract:           Use CSharp from Perl, via Mono
 author:
     - John Drago <jdrago_999@yahoo.com>

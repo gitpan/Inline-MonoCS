@@ -6,7 +6,7 @@ use warnings 'all';
 use Digest::MD5 'md5_hex';
 use Carp 'confess';
 
-our $VERSION = '0.000_05';
+our $VERSION = '1.000';
 
 sub import {
   my $class = shift;

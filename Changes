@@ -1,4 +1,6 @@
 
+2009-12-17  v1.000
+  * Everything looks good and works fine.
 
 2009-12-16  v0.000_05
   * Sometimes `which gmcs` can't find gmcs (because someone messed with %ENV)
